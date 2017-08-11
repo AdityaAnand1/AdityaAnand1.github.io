@@ -1635,7 +1635,7 @@
 	a {
 		text-decoration: none;
 		color: inherit;
-		border-bottom: dotted 1px rgba(128, 128, 128, 0.5);
+		border-bottom: solid 1px rgba(128, 128, 128, 0.3);
 		-moz-transition: color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
 		-webkit-transition: color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
 		-ms-transition: color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
@@ -1644,7 +1644,7 @@
 	}
 
 	a:hover {
-		color: #E27689;
+		color: #3498db;
 		border-bottom-color: rgba(255, 255, 255, 0);
 	}
 
@@ -2087,7 +2087,7 @@
 	}
 
 	#nav ul li a.active span:before {
-		color: #e27689;
+		color: #3498db;
 	}
 
 	/* Footer */
@@ -2166,7 +2166,7 @@
 
 	#main > section.one {
 		background-color: #81918E;
-		background-image: url("../../images/banner_backup.jpg");
+		background-image: url("../../images/banner.jpg");
 		/*https://static.pexels.com/photos/1526/dark-blur-blurred-gradient.jpg*/
 	}
 
