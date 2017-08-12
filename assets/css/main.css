@@ -2,10 +2,8 @@
 
 /*custom*/
 
-
 @import url("font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
-
 
 	/* Reset */
 
@@ -2545,6 +2543,7 @@
 	/*Custom*/	
 	p.portfolio-description{
 		line-height: 1.2;
+		margin: 4px;
 	}
 	strong.portfolio-description{
 		font-weight: bold;
