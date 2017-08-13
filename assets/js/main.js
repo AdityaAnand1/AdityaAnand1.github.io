@@ -1,10 +1,12 @@
-/*
-	Prologue by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 (function($) {
+
+	$(".show_projects_button").click(function (e) { 
+		$(".other_projects").removeClass("other_projects");
+		$(this).hide();
+		e.stopPropagation();
+	});
+
 
 	skel.breakpoints({
 		wide: '(min-width: 961px) and (max-width: 1880px)',
@@ -17,103 +19,103 @@
 	$(function() {
 
 		var	$window = $(window),
-			$body = $('body');
+		$body = $('body');
 
 		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
+		$body.addClass('is-loading');
 
-			$window.on('load', function() {
-				$body.removeClass('is-loading');
-			});
+		$window.on('load', function() {
+			$body.removeClass('is-loading');
+		});
 
 		// CSS polyfills (IE<9).
-			if (skel.vars.IEVersion < 9)
-				$(':last-child').addClass('last-child');
+		if (skel.vars.IEVersion < 9)
+			$(':last-child').addClass('last-child');
 
 		// Fix: Placeholder polyfill.
-			$('form').placeholder();
+		$('form').placeholder();
 
 		// Prioritize "important" elements on mobile.
-			skel.on('+mobile -mobile', function() {
-				$.prioritize(
-					'.important\\28 mobile\\29',
-					skel.breakpoint('mobile').active
+		skel.on('+mobile -mobile', function() {
+			$.prioritize(
+				'.important\\28 mobile\\29',
+				skel.breakpoint('mobile').active
 				);
-			});
+		});
 
 		// Scrolly links.
-			$('.scrolly').scrolly();
+		$('.scrolly').scrolly();
 
 		// Nav.
-			var $nav_a = $('#nav a');
+		var $nav_a = $('#nav a');
 
 			// Scrolly-fy links.
-				$nav_a
-					.scrolly()
-					.on('click', function(e) {
+			$nav_a
+			.scrolly()
+			.on('click', function(e) {
 
-						var t = $(this),
-							href = t.attr('href');
+				var t = $(this),
+				href = t.attr('href');
 
-						if (href[0] != '#')
-							return;
+				if (href[0] != '#')
+					return;
 
-						e.preventDefault();
+				e.preventDefault();
 
 						// Clear active and lock scrollzer until scrolling has stopped
-							$nav_a
-								.removeClass('active')
-								.addClass('scrollzer-locked');
+						$nav_a
+						.removeClass('active')
+						.addClass('scrollzer-locked');
 
 						// Set this link to active
-							t.addClass('active');
+						t.addClass('active');
 
 					});
 
 			// Initialize scrollzer.
-				var ids = [];
+			var ids = [];
 
-				$nav_a.each(function() {
+			$nav_a.each(function() {
 
-					var href = $(this).attr('href');
+				var href = $(this).attr('href');
 
-					if (href[0] != '#')
-						return;
+				if (href[0] != '#')
+					return;
 
-					ids.push(href.substring(1));
+				ids.push(href.substring(1));
 
-				});
+			});
 
-				$.scrollzer(ids, { pad: 200, lastHack: true });
+			$.scrollzer(ids, { pad: 200, lastHack: true });
 
 		// Header (narrower + mobile).
 
 			// Toggle.
-				$(
-					'<div id="headerToggle">' +
-						'<a href="#header" class="toggle"></a>' +
-					'</div>'
+			$(
+				'<div id="headerToggle">' +
+				'<a href="#header" class="toggle"></a>' +
+				'</div>'
 				)
-					.appendTo($body);
+			.appendTo($body);
 
 			// Header.
-				$('#header')
-					.panel({
-						delay: 500,
-						hideOnClick: true,
-						hideOnSwipe: true,
-						resetScroll: true,
-						resetForms: true,
-						side: 'left',
-						target: $body,
-						visibleClass: 'header-visible'
-					});
+			$('#header')
+			.panel({
+				delay: 500,
+				hideOnClick: true,
+				hideOnSwipe: true,
+				resetScroll: true,
+				resetForms: true,
+				side: 'left',
+				target: $body,
+				visibleClass: 'header-visible'
+			});
 
 			// Fix: Remove transitions on WP<10 (poor/buggy performance).
-				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
-					$('#headerToggle, #header, #main')
-						.css('transition', 'none');
+			if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
+				$('#headerToggle, #header, #main')
+			.css('transition', 'none');
 
-	});
+		});
 
 })(jQuery);
